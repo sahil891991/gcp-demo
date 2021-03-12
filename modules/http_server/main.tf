@@ -6,7 +6,7 @@ resource "google_compute_address" "static" {
   name = "ipv4-address"
 }
 
-resource "google_compute_instance" "http_server" {
+resource "google_compute_instance" "instance_with_ip" {
   project      = "${var.project}"
   zone         = "us-west1-a"
   name         = "${local.network}-apache2-instance"

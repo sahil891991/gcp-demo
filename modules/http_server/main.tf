@@ -6,7 +6,7 @@ resource "google_compute_address" "static" {
   name = "ipv4-address"
 }
 
-resource "google_compute_instance" "instance_with_ip" {
+resource "google_compute_instance" "http_server" {
   project      = "${var.project}"
   zone         = "us-west1-a"
   name         = "${local.network}-apache2-instance"
@@ -29,5 +29,5 @@ resource "google_compute_instance" "instance_with_ip" {
   }
 
   # Apply the firewall rule to allow external IPs to access this instance
-  tags = ["instance_with_ip"]
+  tags = ["http_server"]
 }
